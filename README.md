@@ -1,3 +1,5 @@
+# Live Demo
+https://barbershop-booking-app.onrender.com
 # Barbershop Booking App
 
 A simple full-stack booking system built using Flask and SQLite.  
