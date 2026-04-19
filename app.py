@@ -39,14 +39,14 @@ def book():
     time = request.form.get("time", "").strip()
     barber = request.form.get("barber")
 
-    # validation
+    
     if not barber or not service or not time:
         return render_template("error.html", message="Please fill all fields properly.")
 
     conn = sqlite3.connect("bookings.db")
     cursor = conn.cursor()
 
-    # check duplicate booking
+    #To check duplicate booking
     cursor.execute(
         "SELECT * FROM bookings WHERE barber = ? AND time = ?",
         (barber, time)
@@ -57,7 +57,7 @@ def book():
         conn.close()
         return render_template("booking_taken.html")
 
-    # insert booking
+    #For insert booking
     cursor.execute(
         "INSERT INTO bookings (barber, service, time) VALUES (?, ?, ?)",
         (barber, service, time)
