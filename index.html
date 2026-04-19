@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Barbershop Booking</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Barbershop Booking</h1>
+      {% if success %}
+      <p class="success-message">Booking created successfully</p>
+      {% endif %}
+
+      <form action="/book" method="POST">
+        <select name="barber" required>
+          <option value="" disabled selected>Choose your barber</option>
+          <option value="Marco">Marco</option>
+          <option value="Hassan">Hassan</option>
+          <option value="Gwen">Gwen</option>
+        </select>
+
+        <select name="service" required>
+          <option value="" disabled selected>Choose your service</option>
+          <option value="Haircut">Haircut</option>
+          <option value="Beard">Beard</option>
+          <option value="Haircut + Beard">Haircut + Beard</option>
+        </select>
+
+        <select name="time" required>
+          <option value="" disabled selected>Choose a time slot</option>
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <option value="12:00 PM">12:00 PM</option>
+          <option value="1:00 PM">1:00 PM</option>
+          <option value="2:00 PM">2:00 PM</option>
+          <option value="3:00 PM">3:00 PM</option>
+          <option value="4:00 PM">4:00 PM</option>
+          <option value="5:00 PM">5:00 PM</option>
+        </select>
+
+        <button type="submit">Book</button>
+      </form>
+
+      <h3>Bookings</h3>
+
+      {% if bookings %} {% for booking in bookings %}
+      <div class="booking-card">
+        <span>{{ booking[2] }} with {{ booking[1] }} at {{ booking[3] }}</span>
+        <div>
+          <a class="edit-btn" href="/edit/{{ booking[0] }}">Edit</a>
+          <a
+            class="delete-btn"
+            href="/delete/{{ booking[0] }}"
+            onclick="return confirm('Are you sure you want to delete this booking?')"
+            >Delete</a
+          >
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <p>No bookings yet.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

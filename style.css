@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0b0f;
+  font-family: Georgia, serif;
+  color: #eaeaea;
+}
+
+.container {
+  width: 430px;
+  background: #111116;
+  border: 1px solid #3a2f2f;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #d6c3a1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+select,
+input {
+  padding: 10px;
+  border: 1px solid #3a2f2f;
+  border-radius: 8px;
+  background: #0d0d12;
+  color: #f5f5f5;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  background: #1a1a22;
+  color: #d6c3a1;
+  cursor: pointer;
+  border: 1px solid #5a4343;
+}
+
+h3 {
+  margin-bottom: 12px;
+  color: #d6c3a1;
+}
+.success-message {
+  color: #9be39b;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.booking-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #1a1a22;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  color: #ff8a8a;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}
+.edit-btn {
+  color: #9ecbff;
+  text-decoration: none;
+  margin-right: 10px;
+
+}
+
+.edit-btn:hover {
+  text-decoration: underline;
+}
+p {
+  margin: 0;
+}
