@@ -1,81 +1,109 @@
-# Barbershop Booking System
+# Barbershop Booking App
 
-A simple full-stack web application built using Python (Flask) that allows users to book appointments with different barbers.
+A simple full-stack booking system built using Flask and SQLite.  
+Users can create, edit, and delete barbershop appointments through a clean web interface.
 
-## Live Demo
-
-https://barbershop-booking-app.onrender.com
-
-## Overview
-
-This project simulates a real-world barbershop booking system where users can:
-
-- Choose a barber
-- Select a service
-- Pick a time slot
-- Create bookings
-- Prevent duplicate bookings for the same barber and time
-- Delete existing bookings
+---
 
 ## Features
 
-- Multiple barbers (Marco, Hassan, Gwen)
-- Service selection (Haircut, Beard, Combo)
-- Time slot selection
-- Booking validation (no duplicate time slots per barber)
-- Input validation (prevents empty submissions)
-- Delete booking functionality
-- Clean dark-themed UI
+- Create bookings (barber, service, time)
+- Prevent duplicate bookings (same barber + same time)
+- Edit existing bookings
+- Delete bookings
+- Dropdown-based time selection (no invalid inputs)
+- Clean UI using HTML + CSS
+
+---
 
 ## Tech Stack
 
-- Python
-- Flask
-- HTML (embedded in Flask)
-- CSS (inline styling)
+- Python (Flask)
+- SQLite
+- HTML (Jinja2 templates)
+- CSS
+
+---
 
 ## Project Structure
 
-app.py          # Main Flask application  
-requirements.txt  # Dependencies (Flask, gunicorn)
+```
+booking-app/
+│
+├── app.py
+├── bookings.db
+├── requirements.txt
+│
+├── templates/
+│   ├── index.html
+│   ├── edit.html
+│   ├── booking_taken.html
+│   └── error.html
+│
+└── static/
+    └── style.css
+```
 
-## Running Locally
+---
 
-1. Clone the repository:
-git clone https://github.com/CODEGreyx/barbershop-booking-app.git
+## How to Run
 
-2. Navigate into the project:
-cd barbershop-booking-app
+1. Install dependencies:
 
-3. Install dependencies:
-pip install -r requirements.txt
+```
+pip install flask
+```
 
-4. Run the app:
+2. Run the app:
+
+```
 python app.py
+```
 
-5. Open in browser:
+3. Open in browser:
+
+```
 http://127.0.0.1:5000
+```
 
-## Deployment
+---
 
-This project is deployed on Render:
-https://barbershop-booking-app.onrender.com
+## How It Works
 
-## Limitations
+- Flask handles routes:
+  - `/` → show bookings
+  - `/book` → create booking
+  - `/edit/<id>` → edit page
+  - `/update/<id>` → update booking
+  - `/delete/<id>` → delete booking
 
-- Data is stored in memory and resets when the server restarts
-- No database integration yet
-- No authentication system
+- SQLite stores booking data
+
+- Jinja templates render dynamic content
+
+---
+
+## Key Concepts Learned
+
+- CRUD operations
+- Flask routing
+- Form handling
+- Database integration (SQLite)
+- Template rendering with Jinja
+- Basic validation (frontend + backend)
+
+---
 
 ## Future Improvements
 
-- Add a database such as SQLite or PostgreSQL
-- Add user authentication
-- Add an admin dashboard
-- Improve booking management and availability tracking
-- Separate templates and styling into dedicated files
+- User authentication (login/signup)
+- Real-time booking availability
+- Deploy to cloud (Render / AWS)
+- Convert to REST API + frontend (React)
+
+---
 
 ## Author
 
-Hassan Naveed Khan  
+Hassan Naveed Khan
 Computer Science Student
